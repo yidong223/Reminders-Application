@@ -1,0 +1,12 @@
+<h1>Dashboard</h1>
+<h2>Welcome <%= user.name %></h2>
+
+<p>Current Active Sessions:</p>
+
+<%  for(var i = 0; i < array.length; i++) {  %>
+    SessionID: <%= sessions[i] %><br>
+    UserID: <%= userID[i] %><br>
+        <form action="/admin/destroy/:<%= sessions[i] %>" method="POST">
+            <button type="submit">Revoke session</button>
+        </form>
+<% } %>
